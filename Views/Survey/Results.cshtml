@@ -1,0 +1,28 @@
+﻿@model IList<SurveyResultsModel>
+@{
+    ViewData["Title"] = "Results";
+}
+
+<h2>Current Favorite National Parks</h2>
+<div class="container parkSection">
+
+    @foreach (SurveyResultsModel surveyResults in Model)
+    {
+
+        <p>
+            <h2>@surveyResults.ParkName </h2>
+            <figure>
+                <img class="img-responsive" src="~/images/parks/@(surveyResults.ParkCode).jpg" />
+                <figcaption>
+                    <h4>
+                        Survey Votes:@surveyResults.ReviewCount
+                    </h4>
+                </figcaption>
+            </figure>
+        </p>
+
+
+
+    }
+
+</div>
